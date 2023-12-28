@@ -6,6 +6,7 @@ import 'app/routes/app_pages.dart';
 import 'app/shared/themes/theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     GetMaterialApp(
       title: "Better App",
