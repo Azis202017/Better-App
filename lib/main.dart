@@ -8,7 +8,7 @@ import 'app/shared/themes/theme.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "Better App",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: themeData
