@@ -13,13 +13,25 @@ class LoginView extends GetView<LoginController> {
         title: const Text('LoginView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: controller.login,
-          child: const Text(
-            'Login',
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
+              onPressed: controller.login,
+              child: const Text(
+                'Login',
+              ),
+            ),
           ),
-        ),
+          Center(
+            child: ElevatedButton(
+              onPressed: controller.logout,
+              child: const Text(
+                'Logout',
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

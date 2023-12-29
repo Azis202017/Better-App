@@ -10,4 +10,9 @@ class LoginController extends GetxController {
     bool isLogin = await AuthenticationService().login(loginInput: loginInput);
     print(isLogin);
   }
+  void logout() async {
+   
+    bool isLogout = await AuthenticationService().logout();
+    print(isLogout);
+  }
 }
