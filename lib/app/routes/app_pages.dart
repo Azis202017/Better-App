@@ -8,6 +8,8 @@ import '../modules/second_splash_screen/bindings/second_splash_screen_binding.da
 import '../modules/second_splash_screen/views/second_splash_screen_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
 import '../modules/splash_screen/views/splash_screen_view.dart';
+import '../modules/welcome/bindings/welcome_binding.dart';
+import '../modules/welcome/views/welcome_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -16,7 +18,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH_SCREEN;
+  static const INITIAL = Routes.WELCOME;
 
   static final routes = [
     GetPage(
@@ -45,6 +47,11 @@ class AppPages {
           binding: LoginBinding(),
         ),
       ],
+    ),
+    GetPage(
+      name: _Paths.WELCOME,
+      page: () => const WelcomeView(),
+      binding: WelcomeBinding(),
     ),
   ];
 }
