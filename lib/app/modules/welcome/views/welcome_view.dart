@@ -12,47 +12,55 @@ class WelcomeView extends GetView<WelcomeController> {
   const WelcomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 100,
-            ),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GetImage(
-                  image: 'welcome_illustration',
-                  width: 108,
-                  height: 150,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 112.0),
-                  child: RichTwoText(
-                    text1: 'Glad to have you with us,',
-                    text2: 'Borkat!',
+    return GetBuilder<WelcomeController>(
+      builder: (_) {
+        return SafeArea(
+          child: Scaffold(
+            body: RefreshIndicator(
+              onRefresh: controller.getUserData,
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 100,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const GetImage(
+                        image: 'welcome_illustration',
+                        width: 108,
+                        height: 150,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 112.0),
+                        child: RichTwoText(
+                          text1: 'Glad to have you with us,',
+                          text2: controller.user?.name ?? "",
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const SubtitleText(
+                        subtitle: 'Let your journey begin',
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
-                SubtitleText(
-                  subtitle: 'Let your journey begin',
-                ),
-              ],
+              ),
+            ),
+            bottomNavigationBar: PrimaryButton(
+              title: 'Continue',
+              marginBottom: 50,
+              marginLeft: 20,
+              marginRight: 20,
+              onPressed: controller.toHomePage,
             ),
           ),
-        ),
-        bottomNavigationBar: PrimaryButton(
-          title: 'Continue',
-          marginBottom: 50,
-          marginLeft: 20,
-          marginRight: 20,
-          onPressed: controller.toHomePage,
-        ),
-      ),
+        );
+      }
     );
   }
 }
