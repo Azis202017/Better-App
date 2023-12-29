@@ -25,7 +25,7 @@ class LoginView extends GetView<LoginController> {
           ),
           Center(
             child: ElevatedButton(
-              onPressed: controller.register,
+              onPressed: controller.getUser,
               child: const Text(
                 'Logout',
               ),
