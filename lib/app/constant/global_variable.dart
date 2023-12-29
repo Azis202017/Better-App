@@ -7,7 +7,8 @@ const apiUrl = "https://book-crud-service-6dmqxfovfq-et.a.run.app/api";
 GetStorage storage = GetStorage();
 Map<String, dynamic> headersWithAuth = {
   HttpHeaders.authorizationHeader: 'Bearer ${GetStorage().read('token')}',
-  HttpHeaders.acceptHeader : 'application/json'
+  HttpHeaders.acceptHeader : 'application/json',
+  HttpHeaders.contentTypeHeader: 'application/json',
 };
 
 Map<String,dynamic> headers = {
