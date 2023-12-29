@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:better_app/app/services/input/login_input.dart';
-import 'package:dio/dio.dart';
 import '../constant/global_variable.dart';
+import 'input/authentication/login_input.dart';
+import 'input/authentication/register_input.dart';
 
 class AuthenticationService {
   Future<bool> login({required LoginInput loginInput}) async {
     try {
-      Map<String, dynamic> login = {
+      Map<String, dynamic> dataLogin = {
         "email": loginInput.email,
         "password": loginInput.password
       };
@@ -15,7 +15,7 @@ class AuthenticationService {
       String url = '$apiUrl/login';
       final response = await dio.post(
         url,
-        data: json.encode(login),
+        data: json.encode(dataLogin),
       );
       String token = response.data['token'];
 
@@ -29,16 +29,23 @@ class AuthenticationService {
     }
   }
 
-  Future<bool> logout() async {
+
+
+  Future<bool> register({required RegisterInput registerInput}) async {
     try {
-      String url = '$apiUrl/user/logout';
-      final response = await dio.delete(
+      Map<String, dynamic> dataRegis = {
+        "name": registerInput.name,
+        "email": registerInput.email,
+        "password": registerInput.password,
+        "password_confirmation": registerInput.passwordConfirmation,
+      };
+
+      String url = '$apiUrl/register';
+      final response = await dio.post(
         url,
-        options: Options(
-          headers: headersWithAuth,
-          validateStatus: (_) => true,
-        ),
+        data: json.encode(dataRegis),
       );
+
       if (response.statusCode == 200) {
         return true;
       }
