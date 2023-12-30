@@ -60,6 +60,7 @@ class LoginView extends GetView<LoginController> {
                       textEditingController: controller.emailController,
                       focusNode: controller.emailFocus,
                       onEditingComplete: controller.onEmailSubmitted,
+                      validator: controller.emailValidate,
                     ),
                     const SizedBox(
                       height: 16,
@@ -73,6 +74,8 @@ class LoginView extends GetView<LoginController> {
                       showPassword: controller.changeObsecurePassword,
                       icon: 'assets/svg/lock-01.svg',
                       textEditingController: controller.passwordController,
+                      validator: controller.passwordValidate,
+
                     ),
                     const SizedBox(
                       height: 46,
