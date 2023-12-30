@@ -17,7 +17,7 @@ class SecondSplashScreenView extends GetView<SecondSplashScreenController> {
         const Duration(
           seconds: 3,
         ),
-        () => Get.offAllNamed(Routes.LOGIN),
+        () => Get.offAllNamed(Routes.WELCOME_BEFORE_LOGIN),
       );
     }, builder: (context) {
       return const Scaffold(
