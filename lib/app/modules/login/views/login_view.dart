@@ -15,6 +15,8 @@ class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.put(LoginController());
+
     return GetBuilder<LoginController>(builder: (context) {
       return Form(
         key: controller.formKey,
@@ -75,7 +77,6 @@ class LoginView extends GetView<LoginController> {
                       icon: 'assets/svg/lock-01.svg',
                       textEditingController: controller.passwordController,
                       validator: controller.passwordValidate,
-
                     ),
                     const SizedBox(
                       height: 46,
@@ -106,7 +107,6 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
             ),
-          
           ),
         ),
       );

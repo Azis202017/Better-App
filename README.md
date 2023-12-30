@@ -27,13 +27,14 @@ flutter run
 
 ![Splash Screen](./screenshot/splash_screen.jpeg)
 ![Splash Screen2](./screenshot/splash_screen2.jpeg)
-![Splash Screen2](./screenshot/welcome_before_login.jpeg)
+![Welcome Before Login](./screenshot/welcome_before_login.jpeg)
 
-
+![Register](./screenshot/register.jpeg)
 
 ![Login](./screenshot/login.jpeg)
-![Login](./screenshot/login_success.jpeg)
-![Login](./screenshot/welcome.jpeg)
+
+![Login Success](./screenshot/login_success.jpeg)
+![Welcome](./screenshot/welcome.jpeg)
 
 
 
