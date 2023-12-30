@@ -1,16 +1,40 @@
-# better_app
 
-A new Flutter project.
+# Better App
 
-## Getting Started
+Better app adalah aplikasi untuk baca buku, user dapat login dan register  lalu juga user dapat melakukan tambah buku, edit buku, baca buku yang telah dimasukkan oleh user.
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+Clone project ini
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+https://github.com/Azis202017/Better-App.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Mendapatkan dependency
+
+```bash
+flutter pub get
+```
+
+Menjalankan project
+
+```bash
+flutter run
+```
+
+## Screenshots
+
+![Splash Screen](./screenshot/splash_screen.jpeg)
+![Splash Screen2](./screenshot/splash_screen2.jpeg)
+![Splash Screen2](./screenshot/welcome_before_login.jpeg)
+
+
+
+![Login](./screenshot/login.jpeg)
+![Login](./screenshot/login_success.jpeg)
+![Login](./screenshot/welcome.jpeg)
+
+
+
+
