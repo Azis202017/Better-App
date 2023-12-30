@@ -31,17 +31,17 @@ class LoginController extends GetxController {
   }
 
   String? emailValidate(String? value) {
-    if (value!.isEmpty) {
-      return "Email harus diisi terlebih dahulu";
+    if (value == null || value.isEmpty) {
+      return "Email cannot be empty.";
     } else if (!value.contains("@")) {
-      return "Tambahakn @ di email mu supaya valid";
+      return "Please add '@' to create a valid email address.";
     }
     return null;
   }
 
   String? passwordValidate(String? value) {
-    if (value!.isEmpty) {
-      return "Password harus diisi terlebih dahulu";
+    if (value == null || value.isEmpty) {
+      return "Password cannot be empty.";
     }
     return null;
   }
