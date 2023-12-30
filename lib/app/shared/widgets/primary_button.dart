@@ -4,12 +4,14 @@ class PrimaryButton extends StatelessWidget {
   final String title;
   final double? width;
   final double? height;
-  final int? borderRadius;
+  final double? borderRadius;
   final void Function()? onPressed;
   final double? marginLeft;
   final double? marginRight;
   final double? marginTop;
   final double? marginBottom;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
   const PrimaryButton({
     super.key,
     required this.title,
@@ -21,6 +23,8 @@ class PrimaryButton extends StatelessWidget {
     this.marginRight,
     this.marginTop,
     this.marginBottom,
+    this.backgroundColor = const Color(0xff1872F6),
+    this.foregroundColor = Colors.white,
   });
 
   @override
@@ -36,6 +40,15 @@ class PrimaryButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              borderRadius ?? 8,
+            ),
+          ),
+        ),
         child: Text(
           title,
         ),

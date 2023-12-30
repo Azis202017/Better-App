@@ -10,6 +10,7 @@ abstract class Routes {
   static const SECOND_SPLASH_SCREEN = _Paths.SECOND_SPLASH_SCREEN;
   static const LOGIN = _Paths.LOGIN;
   static const WELCOME = _Paths.WELCOME;
+  static const WELCOME_BEFORE_LOGIN = _Paths.WELCOME_BEFORE_LOGIN;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const SECOND_SPLASH_SCREEN = '/second-splash-screen';
   static const LOGIN = '/login';
   static const WELCOME = '/welcome';
+  static const WELCOME_BEFORE_LOGIN = '/welcome-before-login';
 }

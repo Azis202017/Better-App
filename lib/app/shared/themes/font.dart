@@ -50,28 +50,28 @@ TextStyle t8 = GoogleFonts.manrope(
 );
 
 
-TextStyle p1 = GoogleFonts.manrope(
+TextStyle p1 = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w400,
   color:primaryEbonyClayColor
 );
-TextStyle p2 = GoogleFonts.manrope(
+TextStyle p2 = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w400,
   color:primaryEbonyClayColor
 );
-TextStyle p3 = GoogleFonts.manrope(
+TextStyle p3 = GoogleFonts.poppins(
   fontSize: 16,
   fontWeight: FontWeight.w400,
   color:primaryEbonyClayColor
 );
-TextStyle p4 = GoogleFonts.manrope(
+TextStyle p4 = GoogleFonts.poppins(
   fontSize: 14,
   fontWeight: FontWeight.w400,
   color:primaryEbonyClayColor
 );
 
-TextStyle p5 = GoogleFonts.manrope(
+TextStyle p5 = GoogleFonts.poppins(
   fontSize: 12,
   fontWeight: FontWeight.w400,
   color:primaryEbonyClayColor
@@ -79,83 +79,83 @@ TextStyle p5 = GoogleFonts.manrope(
 
 
 
-TextStyle p1Medium = GoogleFonts.manrope(
+TextStyle p1Medium = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w500,
   color:primaryEbonyClayColor
 );
-TextStyle p2Medium = GoogleFonts.manrope(
+TextStyle p2Medium = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w500,
   color:primaryEbonyClayColor
 );
-TextStyle p3Medium = GoogleFonts.manrope(
+TextStyle p3Medium = GoogleFonts.poppins(
   fontSize: 16,
   fontWeight: FontWeight.w500,
   color:primaryEbonyClayColor
 );
-TextStyle p4Medium = GoogleFonts.manrope(
+TextStyle p4Medium = GoogleFonts.poppins(
   fontSize: 14,
   fontWeight: FontWeight.w500,
   color:primaryEbonyClayColor
 );
 
-TextStyle p5Medium = GoogleFonts.manrope(
+TextStyle p5Medium = GoogleFonts.poppins(
   fontSize: 12,
   fontWeight: FontWeight.w500,
   color:primaryEbonyClayColor
 );
 
-TextStyle p1semiBold = GoogleFonts.manrope(
+TextStyle p1semiBold = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w600,
   color:primaryEbonyClayColor
 );
-TextStyle p2semiBold = GoogleFonts.manrope(
+TextStyle p2semiBold = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w600,
   color:primaryEbonyClayColor
 );
-TextStyle p3semiBold = GoogleFonts.manrope(
+TextStyle p3semiBold = GoogleFonts.poppins(
   fontSize: 16,
   fontWeight: FontWeight.w600,
   color:primaryEbonyClayColor
 );
-TextStyle p4semiBold = GoogleFonts.manrope(
+TextStyle p4semiBold = GoogleFonts.poppins(
   fontSize: 14,
   fontWeight: FontWeight.w600,
   color:primaryEbonyClayColor
 );
 
-TextStyle p5semiBold = GoogleFonts.manrope(
+TextStyle p5semiBold = GoogleFonts.poppins(
   fontSize: 12,
   fontWeight: FontWeight.w600,
   color:primaryEbonyClayColor
 );
 
 
-TextStyle p1Bold = GoogleFonts.manrope(
+TextStyle p1Bold = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w700,
   color:primaryEbonyClayColor
 );
-TextStyle p2Bold = GoogleFonts.manrope(
+TextStyle p2Bold = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w700,
   color:primaryEbonyClayColor
 );
-TextStyle p3Bold = GoogleFonts.manrope(
+TextStyle p3Bold = GoogleFonts.poppins(
   fontSize: 16,
   fontWeight: FontWeight.w700,
   color:primaryEbonyClayColor
 );
-TextStyle p4Bold = GoogleFonts.manrope(
+TextStyle p4Bold = GoogleFonts.poppins(
   fontSize: 14,
   fontWeight: FontWeight.w700,
   color:primaryEbonyClayColor
 );
 
-TextStyle p5Bold = GoogleFonts.manrope(
+TextStyle p5Bold = GoogleFonts.poppins(
   fontSize: 12,
   fontWeight: FontWeight.w700,
   color:primaryEbonyClayColor
