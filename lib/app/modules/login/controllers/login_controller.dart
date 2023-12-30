@@ -64,7 +64,7 @@ class LoginController extends GetxController {
       if (isLoginSuccess) {
         alertSuccess(
             title: 'Login Success', subtitle: 'Yeayy welcome to Better App');
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.WELCOME);
       } else {
         alertError(
             title: 'Login Fail',
