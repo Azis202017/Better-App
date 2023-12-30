@@ -2,6 +2,7 @@ import 'package:better_app/app/helpers/alert_success.dart';
 import 'package:better_app/app/routes/app_pages.dart';
 import 'package:better_app/app/services/authentication_service.dart';
 import 'package:better_app/app/services/input/authentication/register_input.dart';
+import 'package:better_app/app/shared/widgets/center_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -119,26 +120,39 @@ class RegisterController extends GetxController {
 
   void register() async {
     RegisterInput registerData = RegisterInput(
-        name: name,
-        email: email,
-        password: password,
-        passwordConfirmation: confirmPassword);
-    bool isRegisterSuccess = await AuthenticationService().register(
-      registerInput: registerData,
+      name: name,
+      email: email,
+      password: password,
+      passwordConfirmation: confirmPassword,
     );
-    if (formKey.currentState!.validate()) {
-      if (isRegisterSuccess) {
-        alertSuccess(
+
+    try {
+      Get.defaultDialog(
+        title: "Waiting for the process",
+        content: const CenterLoading(),
+      );
+
+      bool isRegisterSuccess = await AuthenticationService().register(
+        registerInput: registerData,
+      );
+
+      if (formKey.currentState!.validate()) {
+        if (isRegisterSuccess) {
+          alertSuccess(
             title: 'Register Success',
-            subtitle: 'Yeayy you are new member of better app');
-            Get.offAllNamed(Routes.LOGIN);
-      } else {
-        alertError(
-          title: 'Register Failed',
-          subtitle:
-              'Woaa the email is same as another person you should change the email.',
-        );
+            subtitle: 'Yeayy you are a new member of Better App',
+          );
+          Get.offAllNamed(Routes.LOGIN);
+        } else {
+          alertError(
+            title: 'Register Failed',
+            subtitle:
+                'Woaa the email is the same as another person. Please change the email.',
+          );
+        }
       }
+    } finally {
+      Get.back();
     }
   }
 
