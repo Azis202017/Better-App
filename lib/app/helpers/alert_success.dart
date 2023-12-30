@@ -1,3 +1,4 @@
+import 'package:better_app/app/shared/themes/font.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,11 @@ void alertSuccess({required String title, required String subtitle}) {
     "",
     titleText: Text(
       title,
+      style: p1Bold,
     ),
     messageText: Text(
+      style: p4Medium,
+
       subtitle,
     ),
 

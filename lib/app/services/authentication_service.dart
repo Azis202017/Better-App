@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
+
 import '../constant/global_variable.dart';
 import 'input/authentication/login_input.dart';
 import 'input/authentication/register_input.dart';
@@ -16,10 +18,15 @@ class AuthenticationService {
       final response = await dio.post(
         url,
         data: json.encode(dataLogin),
+        options: Options(
+          headers: headers,
+          validateStatus: (_) => true,
+        ),
       );
-      String token = response.data['token'];
 
       if (response.statusCode == 200) {
+        String token = response.data['token'];
+
         storage.write('token', token);
         return true;
       }
@@ -28,8 +35,6 @@ class AuthenticationService {
       return throw Exception(e);
     }
   }
-
-
 
   Future<bool> register({required RegisterInput registerInput}) async {
     try {

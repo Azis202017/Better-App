@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:better_app/app/shared/themes/color.dart';
 import 'package:better_app/app/shared/themes/font.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +9,7 @@ class TextInput extends StatelessWidget {
   final String title;
   final TextEditingController textEditingController;
   final String? hintText;
+  final String? icon;
   final void Function()? showPassword;
   final bool? isShowPassword;
   final String? Function(String?)? validator;
@@ -23,6 +27,7 @@ class TextInput extends StatelessWidget {
     this.onChange,
     this.onEditingComplete,
     this.focusNode,
+    this.icon,
   });
 
   @override
@@ -46,7 +51,24 @@ class TextInput extends StatelessWidget {
           validator: validator,
           onEditingComplete: onEditingComplete,
           decoration: InputDecoration(
+              prefixIcon: icon != null
+                  ? GestureDetector(
+                      onTap: showPassword,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: SvgPicture.asset(
+                          icon ?? "",
+                          width: 20,
+                          height: 20,
+                          color: secondarySteelColor,
+                        ),
+                      ),
+                    )
+                  : null,
               hintText: hintText,
+              hintStyle: p3.copyWith(
+                color: secondarySteelColor,
+              ),
               suffixIconConstraints: const BoxConstraints(
                 minWidth: 20,
                 minHeight: 20,
@@ -62,6 +84,7 @@ class TextInput extends StatelessWidget {
                               : 'assets/svg/eye.svg',
                           width: 20,
                           height: 20,
+                          color: secondarySteelColor,
                         ),
                       ),
                     )

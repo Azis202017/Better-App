@@ -14,7 +14,7 @@ class WelcomeBeforeLoginController extends GetxController {
     storage.write('welcome_before_login', 1);
     Get.offAllNamed(Routes.LOGIN);
   }
- 
+
 
   void checkIsFirstTime() {
     if (storage.read('welcome_before_login') == 1) {

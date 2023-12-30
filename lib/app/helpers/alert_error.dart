@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../shared/themes/color.dart';
+import '../shared/themes/font.dart';
 
 void alertError({required String title, required String subtitle}) {
   Get.snackbar(
@@ -10,10 +11,11 @@ void alertError({required String title, required String subtitle}) {
     "",
     titleText: Text(
       title,
-      
+      style: p1Bold,
     ),
     messageText: Text(
       subtitle,
+      style: p4Medium,
     ),
 
     margin: const EdgeInsets.only(

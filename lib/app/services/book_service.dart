@@ -41,7 +41,7 @@ class BookService {
           headers: headersWithAuth,
         ),
       );
-      print(response.data);
+      
       if (response.statusCode == 200) {
         return DetailBook.fromJson(response.data);
       }
@@ -74,7 +74,7 @@ class BookService {
           validateStatus: (_) => true,
         ),
       );
-      print(response.data);
+      
       if (response.statusCode == 200) {
         return true;
       }
@@ -108,7 +108,7 @@ class BookService {
           validateStatus: (_) => true,
         ),
       );
-      print(response.data);
+    
       if (response.statusCode == 200) {
         return true;
       }
@@ -130,7 +130,7 @@ class BookService {
           validateStatus: (_) => true,
         ),
       );
-      print(response.data);
+      
       if (response.statusCode == 200) {
         return true;
       }
