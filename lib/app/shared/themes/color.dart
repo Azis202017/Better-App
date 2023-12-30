@@ -30,3 +30,5 @@ Color otherCasalColor = const Color(0xff2E5E68);
 Color otherLightGreyColor = const Color(0xffD9D9D9);
 Color otherParcelalnColor = const Color(0xffF2F2F2);
 Color otherCosmosColor = const Color(0xffF8D9D6);
+const Color errorPrimary = Color(0xffFF4644);
+const Color errorSecondary = Color(0xffFFECEC);
