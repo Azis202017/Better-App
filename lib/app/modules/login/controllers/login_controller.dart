@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../../routes/app_pages.dart';
 
 class LoginController extends GetxController {
+  final formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
   TextEditingController emailController = TextEditingController();
@@ -16,7 +17,7 @@ class LoginController extends GetxController {
   FocusNode passwordFocus = FocusNode();
 
   bool isObsecurePassword = true;
-  
+
   String? onChangeEmail(String? value) {
     email = value ?? "";
     update();
@@ -59,21 +60,22 @@ class LoginController extends GetxController {
         email: emailController.text, password: passwordController.text);
     bool isLoginSuccess =
         await AuthenticationService().login(loginInput: dataLogin);
-    if (isLoginSuccess) {
-      alertSuccess(
-          title: 'Login Success', subtitle: 'Yeayy welcome to Better App');
-    } else {
-      alertError(
-          title: 'Login Fail',
-          subtitle: 'Try to input email and password correctly!');
+    if (formKey.currentState!.validate()) {
+      if (isLoginSuccess) {
+        alertSuccess(
+            title: 'Login Success', subtitle: 'Yeayy welcome to Better App');
+        Get.offAllNamed(Routes.HOME);
+      } else {
+        alertError(
+            title: 'Login Fail',
+            subtitle: 'Try to input email and password correctly!');
+      }
     }
   }
-   void onEmailSubmitted() {
+
+  void onEmailSubmitted() {
     FocusScope.of(Get.context!).requestFocus(passwordFocus);
   }
-  void toRegisterPage() {
-    // Get.toNamed(Routes);
-  }
 
-  
+  void toRegisterPage() {}
 }
