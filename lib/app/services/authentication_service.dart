@@ -49,6 +49,10 @@ class AuthenticationService {
       final response = await dio.post(
         url,
         data: json.encode(dataRegis),
+        options: Options(
+          headers: headers,
+          validateStatus: (_) => true,
+        ),
       );
 
       if (response.statusCode == 200) {

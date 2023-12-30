@@ -4,6 +4,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/register/bindings/register_binding.dart';
+import '../modules/register/views/register_view.dart';
 import '../modules/second_splash_screen/bindings/second_splash_screen_binding.dart';
 import '../modules/second_splash_screen/views/second_splash_screen_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
@@ -59,6 +61,11 @@ class AppPages {
       name: _Paths.WELCOME_BEFORE_LOGIN,
       page: () => const WelcomeBeforeLoginView(),
       binding: WelcomeBeforeLoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => const RegisterView(),
+      binding: RegisterBinding(),
     ),
   ];
 }

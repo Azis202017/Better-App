@@ -5,6 +5,7 @@ class PrimaryButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
+  final IconData? icon;
   final void Function()? onPressed;
   final double? marginLeft;
   final double? marginRight;
@@ -25,6 +26,7 @@ class PrimaryButton extends StatelessWidget {
     this.marginBottom,
     this.backgroundColor = const Color(0xff1872F6),
     this.foregroundColor = Colors.white,
+    this.icon,
   });
 
   @override
@@ -49,9 +51,13 @@ class PrimaryButton extends StatelessWidget {
             ),
           ),
         ),
-        child: Text(
-          title,
-        ),
+        child: title.isEmpty
+            ? Icon(
+                icon,
+              )
+            : Text(
+                title,
+              ),
       ),
     );
   }

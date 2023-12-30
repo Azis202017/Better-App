@@ -77,5 +77,7 @@ class LoginController extends GetxController {
     FocusScope.of(Get.context!).requestFocus(passwordFocus);
   }
 
-  void toRegisterPage() {}
+  void toRegisterPage() {
+    Get.toNamed(Routes.REGISTER);
+  }
 }
