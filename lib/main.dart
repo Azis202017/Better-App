@@ -7,8 +7,8 @@ import 'package:get_storage/get_storage.dart';
 import 'app/routes/app_pages.dart';
 import 'app/shared/themes/theme.dart';
 
-void main() async{
-   await GetStorage.init();
+void main() async {
+  await GetStorage.init();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
