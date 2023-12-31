@@ -91,22 +91,34 @@ class EditBooksController extends GetxController {
       description: description,
       website: websiteController.text,
     );
-    bool isSuccessUpdateBooks = await BookService().updateBooks(
-      booksInput: dataBook,
-      id: Get.arguments['id'],
-    );
-    if (isSuccessUpdateBooks) {
-      Get.back();
-      alertSuccess(
-        title: 'Success uplooad books',
-        subtitle:
-            'Whoaa success upload book, thank you for the contribution to the world',
-      );
-    } else {
-      alertError(
-        title: 'Whoaa you failed upload books',
-        subtitle: 'Failed upload books check if the books is correct',
-      );
-    }
+
+    Get.defaultDialog(
+        title: 'Confirm Edit Books',
+        content: const Text('Are you sure want to edit this book?'),
+        textConfirm: 'Confirm',
+        textCancel: 'Cancel',
+        onConfirm: () async {
+          Get.back();
+          bool isSuccessUpdateBooks = await BookService().updateBooks(
+            booksInput: dataBook,
+            id: Get.arguments['id'],
+          );
+          if (isSuccessUpdateBooks) {
+            Get.back();
+            alertSuccess(
+              title: 'Success uplooad books',
+              subtitle:
+                  'Whoaa success upload book, thank you for the contribution to the world',
+            );
+          } else {
+            alertError(
+              title: 'Whoaa you failed upload books',
+              subtitle: 'Failed upload books check if the books is correct',
+            );
+          }
+        },
+        onCancel: () {
+          Get.back();
+        });
   }
 }

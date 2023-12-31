@@ -60,31 +60,23 @@ class LoginController extends GetxController {
     LoginInput dataLogin = LoginInput(
         email: emailController.text, password: passwordController.text);
 
-    try {
-      bool isLoginSuccess =
-          await AuthenticationService().login(loginInput: dataLogin);
-
-      if (formKey.currentState!.validate()) {
-        if (isLoginSuccess) {
-          Get.defaultDialog(
-            title: "Waiting for the process",
-            content: const CenterLoading(),
-          );
-          alertSuccess(
-              title: 'Login Success', subtitle: 'Yeayy welcome to Better App');
-          Get.offAllNamed(Routes.WELCOME);
-        } else {
-          Get.defaultDialog(
-            title: "Waiting for the process",
-            content: const CenterLoading(),
-          );
-          alertError(
-              title: 'Login Fail',
-              subtitle: 'Try to input email and password correctly!');
-        }
+    Get.defaultDialog(
+      title: "Waiting for the process",
+      content: const CenterLoading(),
+    );
+    bool isLoginSuccess =
+        await AuthenticationService().login(loginInput: dataLogin);
+    Get.back();
+    if (formKey.currentState!.validate()) {
+      if (isLoginSuccess) {
+        alertSuccess(
+            title: 'Login Success', subtitle: 'Yeayy welcome to Better App');
+        Get.offAllNamed(Routes.WELCOME);
+      } else {
+        alertError(
+            title: 'Login Fail',
+            subtitle: 'Try to input email and password correctly!');
       }
-    } finally {
-      Get.back();
     }
   }
 

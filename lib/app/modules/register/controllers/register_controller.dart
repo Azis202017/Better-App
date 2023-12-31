@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../helpers/alert_error.dart';
+import '../../../shared/widgets/center_loading.dart';
 
 class RegisterController extends GetxController {
   final formKey = GlobalKey<FormState>();
@@ -123,15 +124,21 @@ class RegisterController extends GetxController {
         email: email,
         password: password,
         passwordConfirmation: confirmPassword);
+
+    Get.defaultDialog(
+      title: "Waiting for the process",
+      content: const CenterLoading(),
+    );
     bool isRegisterSuccess = await AuthenticationService().register(
       registerInput: registerData,
     );
+    Get.back();
     if (formKey.currentState!.validate()) {
       if (isRegisterSuccess) {
         alertSuccess(
             title: 'Register Success',
             subtitle: 'Yeayy you are new member of better app');
-            Get.offAllNamed(Routes.LOGIN);
+        Get.offAllNamed(Routes.LOGIN);
       } else {
         alertError(
           title: 'Register Failed',

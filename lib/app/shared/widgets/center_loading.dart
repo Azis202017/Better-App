@@ -6,6 +6,7 @@ class CenterLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Material(
+      color: Colors.white,
       child: Center(
         child: CircularProgressIndicator.adaptive(),
       ),

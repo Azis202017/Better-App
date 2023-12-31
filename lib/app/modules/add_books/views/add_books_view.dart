@@ -15,7 +15,7 @@ class AddBooksView extends GetView<AddBooksController> {
     return GetBuilder<AddBooksController>(builder: (context) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Add Books'),
+          title: const Text('Upload Books'),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -98,6 +98,8 @@ class AddBooksView extends GetView<AddBooksController> {
                   onTap: controller.showDate,
                   child: TextInput(
                     title: 'Published',
+                    onTap: controller.showDate,
+                    readOnly: true,
                     textEditingController: controller.publishedController,
                   ),
                 ),
