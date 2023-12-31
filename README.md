@@ -23,6 +23,13 @@ Menjalankan project
 flutter run
 ```
 
+Akun demo
+
+```bash
+Email : abdulazisalayubbi@gmail.com
+Password : Lolitaa1233
+```
+
 ## Screenshots
 
 ![Splash Screen](./screenshot/splash_screen.jpeg)
@@ -35,6 +42,18 @@ flutter run
 
 ![Login Success](./screenshot/login_success.jpeg)
 ![Welcome](./screenshot/welcome.jpeg)
+![List Books](./screenshot/list_books.jpeg)
+![Upload Books](./screenshot/upload_books.jpeg)
+![Detail Books](./screenshot/detail_books.jpeg)
+![Edit Books](./screenshot/edit_data.jpeg)
+![Delete Books](./screenshot/delete_books.jpeg)
+![Logout](./screenshot/logout.jpeg)
+
+
+
+
+
+
 
 
 
