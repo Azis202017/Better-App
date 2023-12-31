@@ -70,12 +70,12 @@ class AddBooksController extends GetxController {
     bool isSuccessCreateBooks =
         await BookService().createBooks(booksInput: dataBook);
     if (isSuccessCreateBooks) {
+      Get.back();
       alertSuccess(
         title: 'Success uplooad books',
         subtitle:
             'Whoaa success upload book, thank you for the contribution to the world',
       );
-      Get.back();
     } else {
       alertError(
         title: 'Whoaa you failed upload books',

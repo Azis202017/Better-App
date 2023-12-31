@@ -16,6 +16,10 @@ class TextInput extends StatelessWidget {
   final String? Function(String? value)? onChange;
   final void Function()? onEditingComplete;
   final FocusNode? focusNode;
+  final TextInputType? textInputType;
+  final void Function()? onTap;
+  final bool readOnly;
+
   const TextInput({
     super.key,
     required this.title,
@@ -28,6 +32,9 @@ class TextInput extends StatelessWidget {
     this.onEditingComplete,
     this.focusNode,
     this.icon,
+    this.textInputType,
+    this.onTap,
+    this.readOnly = false,
   });
 
   @override
@@ -43,10 +50,13 @@ class TextInput extends StatelessWidget {
           height: 10,
         ),
         TextFormField(
+          keyboardType: textInputType,
           onChanged: onChange,
           controller: textEditingController,
           obscureText: isShowPassword ?? false,
           focusNode: focusNode,
+          readOnly: readOnly,
+          onTap: onTap,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: validator,
           onEditingComplete: onEditingComplete,

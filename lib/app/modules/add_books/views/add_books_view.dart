@@ -32,6 +32,7 @@ class AddBooksView extends GetView<AddBooksController> {
                 TextInput(
                   title: 'Isbn',
                   textEditingController: controller.isbnController,
+                  textInputType: TextInputType.number,
                 ),
                 const SizedBox(
                   height: 20,
@@ -44,8 +45,9 @@ class AddBooksView extends GetView<AddBooksController> {
                   height: 20,
                 ),
                 TextInput(
-                    title: 'Title',
-                    textEditingController: controller.titleController),
+                  title: 'Title',
+                  textEditingController: controller.titleController,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -80,6 +82,7 @@ class AddBooksView extends GetView<AddBooksController> {
                 TextInput(
                   title: 'Pages',
                   textEditingController: controller.pagesController,
+                  textInputType: TextInputType.number,
                 ),
                 const SizedBox(
                   height: 20,
@@ -118,6 +121,5 @@ class AddBooksView extends GetView<AddBooksController> {
         ),
       );
     });
-  
   }
 }

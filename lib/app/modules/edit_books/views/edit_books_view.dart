@@ -13,106 +13,115 @@ class EditBooksView extends GetView<EditBooksController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<EditBooksController>(builder: (context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('AddBooksView'),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                TextInput(
-                  title: 'Isbn',
-                  textEditingController: controller.isbnController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                  title: 'Author',
-                  textEditingController: controller.authorController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                    title: 'Title',
-                    textEditingController: controller.titleController),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                  title: 'Subtitle',
-                  textEditingController: controller.subtitleController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Description",
-                  style: p3semiBold,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: controller.toMarkDown,
-                  child: controller.description.isEmpty
-                      ? Text(
-                          'Create description in here...',
-                          style: p3Medium,
-                        )
-                      : MarkdownBody(
-                          data: controller.description,
-                        ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                  title: 'Pages',
-                  textEditingController: controller.pagesController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                  title: 'Website',
-                  textEditingController: controller.websiteController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                GestureDetector(
-                  onTap: controller.showDate,
-                  child: TextInput(
-                    title: 'Published',
-                    textEditingController: controller.publishedController,
+      return Form(
+        key: controller.formKey,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Edit Data'),
+            centerTitle: true,
+          ),
+          body: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 40,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextInput(
-                  title: 'Publisher',
-                  textEditingController: controller.publisherController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                PrimaryButton(
-                  title: 'Create new books',
-                  onPressed: controller.updateBooks,
-                ),
-              ],
+                  TextInput(
+                    title: 'Isbn',
+                    textEditingController: controller.isbnController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Author',
+                    textEditingController: controller.authorController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Title',
+                    textEditingController: controller.titleController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Subtitle',
+                    textEditingController: controller.subtitleController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Description",
+                    style: p3semiBold,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: controller.toMarkDown,
+                    child: controller.description.isEmpty
+                        ? Text(
+                            'Create description in here...',
+                            style: p3Medium,
+                          )
+                        : MarkdownBody(
+                            data: controller.description,
+                          ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Pages',
+                    textEditingController: controller.pagesController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Website',
+                    textEditingController: controller.websiteController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: controller.showDate,
+                    child: TextInput(
+                      title: 'Published',
+                      onTap:controller.showDate,
+                      readOnly: true,
+                      textEditingController: controller.publishedController,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextInput(
+                    title: 'Publisher',
+                    textEditingController: controller.publisherController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  PrimaryButton(
+                    title: 'Update',
+                    onPressed: controller.updateBooks,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -25,6 +25,7 @@ class BookService {
           return data.map((e) => Book.fromJson(e)).toList();
         }
       }
+      print(response.data);
       return [];
     } catch (e) {
       throw Exception(e);
@@ -120,7 +121,7 @@ class BookService {
   }
 
   Future<bool> deleteBooks(
-      {required BookInput booksInput, required int id}) async {
+      { required int id}) async {
     try {
       var url = "$apiUrl/books/$id";
 
