@@ -4,6 +4,8 @@ import '../modules/add_books/bindings/add_books_binding.dart';
 import '../modules/add_books/views/add_books_view.dart';
 import '../modules/add_books_markdown/bindings/add_books_markdown_binding.dart';
 import '../modules/add_books_markdown/views/add_books_markdown_view.dart';
+import '../modules/bottom_navbar/bindings/bottom_navbar_binding.dart';
+import '../modules/bottom_navbar/views/bottom_navbar_view.dart';
 import '../modules/detail_books/bindings/detail_books_binding.dart';
 import '../modules/detail_books/views/detail_books_view.dart';
 import '../modules/edit_books/bindings/edit_books_binding.dart';
@@ -108,6 +110,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOTTOM_NAVBAR,
+      page: () => const BottomNavbarView(),
+      binding: BottomNavbarBinding(),
     ),
   ];
 }

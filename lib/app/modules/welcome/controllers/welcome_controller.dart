@@ -20,12 +20,12 @@ class WelcomeController extends GetxController {
   }
   void toHomePage() {
     storage.write('welcome', 1);
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.BOTTOM_NAVBAR);
   }
 
   void checkIsFirstTime() {
     if (storage.read('welcome') == 1) {
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.BOTTOM_NAVBAR);
     }
   }
   Future<void> getUserData() async{

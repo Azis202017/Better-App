@@ -6,14 +6,16 @@ import '../../../routes/app_pages.dart';
 
 class ProfileController extends GetxController {
   User? user = User();
+  bool isLoading = true;
   @override
   void onInit() {
     super.onInit();
     fetchUser();
   }
 
-  void fetchUser() async {
+  Future<void> fetchUser() async {
     user = await UserService().fetchUser();
+    isLoading = false;
     update();
   }
 

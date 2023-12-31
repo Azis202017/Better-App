@@ -1,3 +1,5 @@
+import 'package:better_app/app/helpers/alert_error.dart';
+import 'package:better_app/app/helpers/alert_success.dart';
 import 'package:better_app/app/routes/app_pages.dart';
 import 'package:better_app/app/services/book_service.dart';
 import 'package:better_app/app/services/input/books/book_input.dart';
@@ -67,5 +69,18 @@ class AddBooksController extends GetxController {
     );
     bool isSuccessCreateBooks =
         await BookService().createBooks(booksInput: dataBook);
+    if (isSuccessCreateBooks) {
+      alertSuccess(
+        title: 'Success uplooad books',
+        subtitle:
+            'Whoaa success upload book, thank you for the contribution to the world',
+      );
+      Get.back();
+    } else {
+      alertError(
+        title: 'Whoaa you failed upload books',
+        subtitle: 'Failed upload books check if the books is correct',
+      );
+    }
   }
 }
