@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import '../modules/add_books/bindings/add_books_binding.dart';
+import '../modules/add_books/views/add_books_view.dart';
+import '../modules/add_books_markdown/bindings/add_books_markdown_binding.dart';
+import '../modules/add_books_markdown/views/add_books_markdown_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -66,6 +70,16 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_BOOKS,
+      page: () => const AddBooksView(),
+      binding: AddBooksBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_BOOKS_MARKDOWN,
+      page: () => const AddBooksMarkdownView(),
+      binding: AddBooksMarkdownBinding(),
     ),
   ];
 }

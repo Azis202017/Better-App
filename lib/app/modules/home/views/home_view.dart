@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -19,6 +20,9 @@ class HomeView extends GetView<HomeController> {
           style: TextStyle(fontSize: 20),
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Get.toNamed(Routes.ADD_BOOKS);
+      }),
     );
   }
 }

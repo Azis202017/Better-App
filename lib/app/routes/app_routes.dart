@@ -12,6 +12,8 @@ abstract class Routes {
   static const WELCOME = _Paths.WELCOME;
   static const WELCOME_BEFORE_LOGIN = _Paths.WELCOME_BEFORE_LOGIN;
   static const REGISTER = _Paths.REGISTER;
+  static const ADD_BOOKS = _Paths.ADD_BOOKS;
+  static const ADD_BOOKS_MARKDOWN = _Paths.ADD_BOOKS_MARKDOWN;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const WELCOME = '/welcome';
   static const WELCOME_BEFORE_LOGIN = '/welcome-before-login';
   static const REGISTER = '/register';
+  static const ADD_BOOKS = '/add-books';
+  static const ADD_BOOKS_MARKDOWN = '/add-books-markdown';
 }

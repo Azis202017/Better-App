@@ -74,6 +74,7 @@ class BookService {
           validateStatus: (_) => true,
         ),
       );
+      print(response.data);
       
       if (response.statusCode == 200) {
         return true;
