@@ -21,7 +21,7 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
-        Get.toNamed(Routes.ADD_BOOKS);
+        Get.toNamed(Routes.PROFILE);
       }),
     );
   }

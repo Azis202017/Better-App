@@ -17,6 +17,7 @@ abstract class Routes {
   static const DETAIL_BOOKS = _Paths.DETAIL_BOOKS;
   static const EDIT_BOOKS = _Paths.EDIT_BOOKS;
   static const MARKDOWN_EDITOR_EDIT_BOOKS = _Paths.MARKDOWN_EDITOR_EDIT_BOOKS;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const DETAIL_BOOKS = '/detail-books';
   static const EDIT_BOOKS = '/edit-books';
   static const MARKDOWN_EDITOR_EDIT_BOOKS = '/markdown-editor-edit-books';
+  static const PROFILE = '/profile';
 }

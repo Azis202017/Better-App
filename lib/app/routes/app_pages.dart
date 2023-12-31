@@ -14,6 +14,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/markdown_editor_edit_books/bindings/markdown_editor_edit_books_binding.dart';
 import '../modules/markdown_editor_edit_books/views/markdown_editor_edit_books_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/second_splash_screen/bindings/second_splash_screen_binding.dart';
@@ -101,6 +103,11 @@ class AppPages {
       name: _Paths.MARKDOWN_EDITOR_EDIT_BOOKS,
       page: () => const MarkdownEditorEditBooksView(),
       binding: MarkdownEditorEditBooksBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
