@@ -25,7 +25,6 @@ class BookService {
           return data.map((e) => Book.fromJson(e)).toList();
         }
       }
-      print(response.data);
       return [];
     } catch (e) {
       throw Exception(e);
@@ -75,7 +74,6 @@ class BookService {
           validateStatus: (_) => true,
         ),
       );
-      print(response.data);
       
       if (response.statusCode == 200) {
         return true;

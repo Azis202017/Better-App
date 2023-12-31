@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:better_app/app/modules/home/controllers/home_controller.dart';
 import 'package:better_app/app/modules/profile/controllers/profile_controller.dart';
 import 'package:better_app/app/shared/themes/color.dart';
@@ -30,6 +32,8 @@ class BottomNavbarView extends GetView<BottomNavbarController> {
             ),
             child: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
+              backgroundColor: Colors.white,
+              
               items: [
                 BottomNavigationBarItem(
                   icon: Image.asset(

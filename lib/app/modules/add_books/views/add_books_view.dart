@@ -15,7 +15,7 @@ class AddBooksView extends GetView<AddBooksController> {
     return GetBuilder<AddBooksController>(builder: (context) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('AddBooksView'),
+          title: const Text('Add Books'),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -112,8 +112,11 @@ class AddBooksView extends GetView<AddBooksController> {
                   height: 20,
                 ),
                 PrimaryButton(
-                  title: 'Create new books',
+                  title: 'Upload books',
                   onPressed: controller.createBooks,
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
               ],
             ),

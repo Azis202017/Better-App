@@ -2,6 +2,8 @@ import 'package:better_app/app/data/model/detail_book.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../helpers/alert_error.dart';
+import '../../../helpers/alert_success.dart';
 import '../../../helpers/date_to_string.dart';
 import '../../../routes/app_pages.dart';
 import '../../../services/book_service.dart';
@@ -24,7 +26,6 @@ class EditBooksController extends GetxController {
   FocusNode subtitleFocusNode = FocusNode();
   FocusNode authorFocusNode = FocusNode();
   FocusNode publisherFocusNode = FocusNode();
-  
 
   final formKey = GlobalKey<FormState>();
   @override
@@ -96,8 +97,16 @@ class EditBooksController extends GetxController {
     );
     if (isSuccessUpdateBooks) {
       Get.back();
+      alertSuccess(
+        title: 'Success uplooad books',
+        subtitle:
+            'Whoaa success upload book, thank you for the contribution to the world',
+      );
     } else {
-      print("ada yang salah");
+      alertError(
+        title: 'Whoaa you failed upload books',
+        subtitle: 'Failed upload books check if the books is correct',
+      );
     }
   }
 }
