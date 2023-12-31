@@ -1,18 +1,18 @@
-import 'package:better_app/app/shared/themes/font.dart';
-import 'package:better_app/app/shared/widgets/primary_button.dart';
-import 'package:better_app/app/shared/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/add_books_controller.dart';
+import '../../../shared/themes/font.dart';
+import '../../../shared/widgets/primary_button.dart';
+import '../../../shared/widgets/text_input.dart';
+import '../controllers/edit_books_controller.dart';
 
-class AddBooksView extends GetView<AddBooksController> {
-  const AddBooksView({Key? key}) : super(key: key);
+class EditBooksView extends GetView<EditBooksController> {
+  const EditBooksView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<AddBooksController>(builder: (context) {
+    return GetBuilder<EditBooksController>(builder: (context) {
       return Scaffold(
         appBar: AppBar(
           title: const Text('AddBooksView'),
@@ -110,7 +110,7 @@ class AddBooksView extends GetView<AddBooksController> {
                 ),
                 PrimaryButton(
                   title: 'Create new books',
-                  onPressed: controller.createBooks,
+                  onPressed: controller.updateBooks,
                 ),
               ],
             ),
@@ -118,6 +118,5 @@ class AddBooksView extends GetView<AddBooksController> {
         ),
       );
     });
-  
   }
 }

@@ -4,10 +4,16 @@ import '../modules/add_books/bindings/add_books_binding.dart';
 import '../modules/add_books/views/add_books_view.dart';
 import '../modules/add_books_markdown/bindings/add_books_markdown_binding.dart';
 import '../modules/add_books_markdown/views/add_books_markdown_view.dart';
+import '../modules/detail_books/bindings/detail_books_binding.dart';
+import '../modules/detail_books/views/detail_books_view.dart';
+import '../modules/edit_books/bindings/edit_books_binding.dart';
+import '../modules/edit_books/views/edit_books_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/markdown_editor_edit_books/bindings/markdown_editor_edit_books_binding.dart';
+import '../modules/markdown_editor_edit_books/views/markdown_editor_edit_books_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/second_splash_screen/bindings/second_splash_screen_binding.dart';
@@ -80,6 +86,21 @@ class AppPages {
       name: _Paths.ADD_BOOKS_MARKDOWN,
       page: () => const AddBooksMarkdownView(),
       binding: AddBooksMarkdownBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_BOOKS,
+      page: () => const DetailBooksView(),
+      binding: DetailBooksBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_BOOKS,
+      page: () => const EditBooksView(),
+      binding: EditBooksBinding(),
+    ),
+    GetPage(
+      name: _Paths.MARKDOWN_EDITOR_EDIT_BOOKS,
+      page: () => const MarkdownEditorEditBooksView(),
+      binding: MarkdownEditorEditBooksBinding(),
     ),
   ];
 }
