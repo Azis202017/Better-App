@@ -15,7 +15,7 @@ class EditBooksView extends GetView<EditBooksController> {
     return GetBuilder<EditBooksController>(builder: (context) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Edit Data'),
+          title: const Text('Edit Books'),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
